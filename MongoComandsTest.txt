@@ -1,0 +1,9 @@
+use my_server
+db.users.insertMany([{_id:1, name: "Romela", age: 26, gender:"female"}, {name: "Radja", age: 31, gender:"male"}, {name: "Eden", age: 28, gender:"male"}, {name: "Axel", age: 30, gender:"male"}, {name: "Kevin", age: 28, gender:"male"}])
+db.tasks.insertOne({title: "express-hw-1", duration_days: 1, text: "Create server" , completed: true, created: true, updated: true})
+db.tasks.insert({title: "express-hw-2", duration_days: 1, text: "Create ToDo app", completed: false, created: true, updated: false})
+//db.users.updateOne({_id:1}, {$set:{name:"Romelu"})// ays tox@ greluc heto shell@ vari a etum//
+db.users.find({gender: "female"})
+db.tasks.find({completed: false})
+db.tasks.update({completed:false}, {$inc: {duration_days: 1}})
+db.tasks.deleteMany({completed: true})
